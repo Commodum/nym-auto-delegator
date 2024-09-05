@@ -27,6 +27,20 @@ target_mixnode_id="292"
 minimum_delegation_amount="500"
 gas_allowance="1"
 
+# Set values from environment varaiables
+if [[ "$MNEMONIC" != "" ]]; then
+        nym_wallet_mnemonic=$MNEMONIC
+fi
+if [[ "$MIXNODE_ID" != "" ]]; then
+        target_mixnode_id=$MIXNODE_ID
+fi
+if [[ "$ACCOUNT_ID" != "" ]]; then
+        nym_account=$ACCOUNT_ID
+fi
+if [[ "$MINIMUM_DELEGATION_AMOUNT" != "" ]]; then
+        minimum_delegation_amount=$MINIMUM_DELEGATION_AMOUNT
+fi
+
 # Get the options
 while getopts :hm:t:a:d: option; do
         case ${option} in
